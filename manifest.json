@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Price Tracker",
+  "version": "1.0",
+  "description": "Track price on shopping sites",
+  "permissions": ["storage", "tabs", "offscreen"],
+  "host_permissions": ["*://*.amazon.in/*", "*://*.flipkart.com/*", "*://*.myntra.com/*"],
+  "background": {
+    "service_worker": "worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.amazon.in/*", "*://*.flipkart.com/*", "*://*.myntra.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["*://*.amazon.in/*", "*://*.flipkart.com/*", "*://*.myntra.com/*"]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/icon.png",
+        "assets/plus.png",
+        "assets/accept.png"
+      ],
+      "matches": ["*://*.amazon.in/*", "*://*.flipkart.com/*", "*://*.myntra.com/*"]
+    }
+  ],
+  "action": {
+    "default_icon": "assets/icon.png",
+    "default_title": "Price Tracker",
+    "default_popup": "popup.html"
+  }
+}

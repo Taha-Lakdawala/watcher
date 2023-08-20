@@ -1,0 +1,15 @@
+.container {
+    max-height: 400px;
+    padding-top: 5px;
+}
+.table th {
+    text-align: center;
+    text-transform: capitalize;
+    padding: 10px;
+}
+.table {
+    padding: 1px;
+}
+.itemdiv{
+    width: 200px;
+}
